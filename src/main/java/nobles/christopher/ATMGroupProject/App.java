@@ -5,10 +5,13 @@ package nobles.christopher.ATMGroupProject;
  */
 public class App {
 
+
+
     public static void main(String[] args) {
 
-        boolean start () {
-            return false;
+        ATM atm = new ATM();
+
+        atm.init();
         }
     }
-}
+

@@ -9,22 +9,21 @@ public class UserInput {
 
 
     public int prompt(){
-
-        return 5;
-
+        int a = userInput.nextInt();
+        return a;
     }
 
     public double promptDouble(){
-
-        return 5.0;
-
-    }
+        double a = userInput.nextDouble();
+        return a;}
 
     public String promptString(){
+        String a = userInput.next();
+        return a;}
 
-        String a = "Troublemaker";
+    public int getFuckingResponse() {
+       int a = userInput.nextInt();
 
         return a;
-
     }
 }
