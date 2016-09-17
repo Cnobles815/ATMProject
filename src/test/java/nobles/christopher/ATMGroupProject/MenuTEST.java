@@ -8,12 +8,27 @@ import static org.junit.Assert.assertEquals;
  */
 public class MenuTEST {
 
-//    @Test
-//    public void customerMenusTEST(Customer input){
-//        Menu menus = new Menu();
-//        boolean expectedValue = true;
-//        boolean actualValue = menus.customerMenus(5);
-//        assertEquals("The returns should be false" , expectedValue, actualValue);
-//
-//    }
+    @Test
+    public void renderCustomerMenusTEST(Customer input){
+        Menu menu = new Menu();
+        boolean expectedValue = true;
+        boolean actualValue = menu.customerMenus(5);
+        assertEquals("The returns should be false" , expectedValue, actualValue);
+    }
+
+    @Test
+    public void renderAccountsTEST() {
+        Menu menu = new Menu();
+        boolean expectedValue = true;
+        boolean actualValue = menu.renderAccounts();
+        assertEquals("The return should be false" , expectedValue, actualValue);
+    }
+
+    @Test
+    public void renderAccountsMenuTEST() {
+        Menu menu = new Menu();
+        boolean expectedValue = true;
+        boolean actualValue = menu.renderAccounts();
+        assertEquals("The return should be false" , expectedValue , actualValue);
+    }
 }

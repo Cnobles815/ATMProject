@@ -5,6 +5,8 @@ package nobles.christopher.ATMGroupProject;
  */
 public class Menu {
 
+    UserInput userInput = new UserInput();
+
     public boolean customerMenus(Customer value) {
 
 
@@ -34,7 +36,7 @@ public class Menu {
         System.out.println("Please enter your LAST name.");
     }
 
-    public void renderMainMenu() {
+    public boolean renderMainMenu() {
         output("[[WELOME]]" +
                 "\n You have gained access to the least secure ATM on Earth" +
                 "\n If you weren't broke before, you probably are now." +
@@ -42,26 +44,41 @@ public class Menu {
         output("[1] New Customer" +
                 "\n[2] Existing Customer Login" +
                 "\n[3] Exit");
+        return false;
     }
 
-    public void renderAccounts() {
+    public boolean renderAccounts() {
         output("You actually have accounts here. Bad choice.");
         output("Your accounts are listed below:");
+        return false;
     }
 
-    public void renderNewCustomerMenu() {
-        output()
-    }
-
-    public void renderAccountsMenu() {
+    public boolean renderAccountsMenu() {
         output("[1] Credit" +
                 "\n[2] Debit" +
                 "\n[3] Transfer" +
                 "\n[4] Close Account");
+        return false;
     }
 
-    public void INVALID() {
+    public boolean INVALID() {
         output("YOU CANNOT DO THAT STOP IT BAD");
+        return false;
+    }
+
+    public boolean renderExistingCustomerMenu() {
+        output("[1]");
+        return false;
+    }
+
+    public boolean renderNewCustomerMenu() {
+        output("You're actually making an account here. I won't judge." +
+                "\nEnter FIRST NAME:");
+        String firstName = userInput.promptString();
+        output("Enter LAST NAME: ");
+        String lastName = userInput.promptString();
+
+        return false;
     }
 }
 

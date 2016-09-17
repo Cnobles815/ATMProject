@@ -33,7 +33,7 @@ public class ATM {
                 menu.renderNewCustomerMenu();
                 break;
             case 2:
-                menu.existingCustomerMenu();
+                menu.renderExistingCustomerMenu();
                 break;
             case 3:
                 menu.output("Good choice.");
@@ -42,6 +42,8 @@ public class ATM {
                 menu.INVALID();
                 mainMenu();
         }
+
+
 
 
 
