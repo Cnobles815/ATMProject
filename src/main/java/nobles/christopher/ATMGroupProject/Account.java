@@ -14,15 +14,27 @@ public class Account {
     enum AccountStatus{OPEN,CLOSED,OFAC}
     enum AccountType{CHECKING,SAVING,INVESTMENT}
 
+    Account (int accountID, Customer customer, AccountManager.AccountType type){
+        this.accountBalance = 0;
+        this.accountStatus = Account.AccountStatus.OPEN;
+        this.accountID = accountID;
+        this.accountOwner = customer;
+    }
+
     //getters!
 
-    public int getAccountID(){return accountID;}
+    public int getAccountID(){return this.accountID;}
 
-    public Customer getAccountOwner(){return accountOwner;}
+    public Customer getAccountOwner(){return this.accountOwner;}
 
-    public double getAccountBalance(){return accountBalance;}
+    public double getAccountBalance(){return this.accountBalance;}
 
-    public AccountType getAccountType(){return accountType;}
+    public AccountType getAccountType(){return this.accountType;}
 
-    public AccountStatus getAccountStatus(){return accountStatus;}
+    public AccountStatus getAccountStatus(){return this.accountStatus;}
+
+    public void setAccountBalance(double balance){this.accountBalance = balance;}
+
+    public void setAccountStatus(AccountStatus  status){this.accountStatus = status;}
+    }
 }

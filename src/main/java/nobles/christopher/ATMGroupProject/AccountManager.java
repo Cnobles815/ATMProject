@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class AccountManager {
 
     private ArrayList<Account> accounts = new ArrayList<Account>();
-    private int accountIDCounter;
+    private int accountIDCounter = 0;
     enum AccountStatus{OPEN,CLOSED,OFAC}
     public enum AccountType{CHECKING,SAVING,INVESTMENT}
 
@@ -17,9 +17,14 @@ public class AccountManager {
 //        return;
 //    }
 
-    public boolean createAccount(){
+    public Account createAccount(Customer customer, AccountType type){
+        Account account = new Account(accountIDCounter, customer, type);
+        accounts.add(account);
+        accountIDCounter++;
+        return account;
 
-        return true;
+
+
     }
 
     public boolean closeAccount(){
@@ -27,25 +32,41 @@ public class AccountManager {
         return true;
     }
 
-    public String balanceInquiry(){
+    public String balanceInquiry(Account account){
 
-        String a = "Troublemaker.";
+        String balance = String.valueOf(account.getAccountBalance());
 
-        return a;
+        return balance;
     }
 
-    public boolean deposit(Double depositAmount){
+    public double deposit(Account account , Double depositAmount){
 
-        return true;
+        double balance = account.getAccountBalance();
+
+        double answer = balance + depositAmount;
+
+        return answer;
     }
 
-    public boolean withdrawal(Double withdrawalAmount){
+    public double withdrawal(Account account, Double withdrawalAmount){
 
-        return true;
+        double balance = account.getAccountBalance();
+
+        double answer = balance - withdrawalAmount;
+
+
+        return answer;
     }
 
     public boolean transfer (Account destination, Double transferAmount){
 
+
         return false;
     }
+
+    public boolean getAccountByID (int accountID){
+
+    }
+
+
 }
