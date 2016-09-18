@@ -1,6 +1,5 @@
 package nobles.christopher.ATMGroupProject;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -11,31 +10,46 @@ public class Transaction {
     private int transactionID;
     private int customerID;
     private int accountID;
-    private enum transactionType;
     private double transactionAmount;
+
     private Date transactionDate;
     private boolean isSuccessful;
 
-    public int getTransactionID(){
+    public int getTransactionID() {
         return transactionID;
     }
 
-    public int getCustomerID(){return customerID;}
-    public int getAccountID(){return accountID;}
+    public int getCustomerID() {
+        return customerID;
+    }
 
-    public transactionType transactionType(){return transactionType();}
+    public int getAccountID() {
+        return accountID;
+    }
 
-    public double getTransactionAmount(){return transactionAmount;}
+//    public transactionType transactionType() {
+//        return transactionType();
+//    }
 
-    public Date getTransactionDate(){return transactionDate;}
+    public double getTransactionAmount() {
+        return transactionAmount;
+    }
 
-    public boolean getIsSuccessful(){return isSuccessful;}
+    public Date getTransactionDate() {
+        return transactionDate;
+    }
 
-    public String toString(int input){
+    public boolean getIsSuccessful() {
+        return isSuccessful;
+    }
+
+    public String toString(int input) {
 
         return toString(input);
 
     }
+
+
 
 
 }

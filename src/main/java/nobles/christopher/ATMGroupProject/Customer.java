@@ -11,25 +11,31 @@ public class Customer {
     private String userName;
     private String pin;
 
-
-
-    public int getCustomerID(){
-        return customerID;
+    Customer(String firstName, String lastName, String pin, int customerID) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.pin = pin;
+        this.customerID = customerID;
     }
 
-    public String getFirstName(){
-        return firstName;
+
+    public int getCustomerID() {
+        return this.customerID;
     }
 
-    public String getLastName(){
-        return lastName;
+    public String getFirstName() {
+        return this.firstName;
     }
 
-    public String getUserName(){
-        return userName;
+    public String getLastName() {
+        return this.lastName;
     }
 
-    public String getPin(){
-        return pin;
+    public String getUserName() {
+        return this.userName;
+    }
+
+    public String getPin() {
+        return this.pin;
     }
 }

@@ -1,17 +1,16 @@
 package nobles.christopher.ATMGroupProject;
-import java.util.Scanner;
 
 /**
  * Created by christophernobles on 9/17/16.
  */
 public class ATM {
 
-    Menu menu = new Menu() ;
+    Menu menu = new Menu();
     UserInput userInput = new UserInput();
     Engine engine = new Engine();
 
 
-    public void init(){
+    public void init() {
         Menu menu = new Menu();
         UserInput userInput = new UserInput();
         Engine engine = new Engine();
@@ -21,14 +20,15 @@ public class ATM {
 
     public void mainMenu() {
         menu.renderMainMenu();
-        boolean exit = false;
+        int exit = 0;
         int userChoice = userInput.prompt();
-        while (exit = false)
-        {exit = userChoice(this.userInput.prompt());}
+        while (userChoice != 3) {
+            mainMenu();
+        }
     }
 
     public void userSelection(int userSelection) {
-        switch (userChoice) {
+        switch (userSelection) {
             case 1:
                 menu.renderNewCustomerMenu();
                 break;
@@ -44,15 +44,12 @@ public class ATM {
         }
 
 
-
-
-
-        }
     }
-
-
-
-
-
-
 }
+
+
+
+
+
+
+

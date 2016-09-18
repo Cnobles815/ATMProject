@@ -4,17 +4,16 @@ package nobles.christopher.ATMGroupProject;
  * Created by christophernobles on 9/17/16.
  */
 public class Menu {
-
+    Engine engine = new Engine();
     UserInput userInput = new UserInput();
 
     public boolean customerMenus(Customer value) {
 
 
-
         return false;
     }
 
-    public void output(String param){
+    public void output(String param) {
         System.out.println(param);
     }
 
@@ -32,13 +31,14 @@ public class Menu {
         return userName;
     }
 
-    public boolean getUserLastName(){
+    public boolean getUserLastName() {
         System.out.println("Please enter your LAST name.");
+        return false;
     }
 
     public boolean renderMainMenu() {
-        output("[[WELOME]]" +
-                "\n You have gained access to the least secure ATM on Earth" +
+        output("                          [[WELCOME]]" +
+                "\n You have gained access to the least secure ATM on Earth." +
                 "\n If you weren't broke before, you probably are now." +
                 "\n-------------------------------------------------------");
         output("[1] New Customer" +
@@ -67,7 +67,10 @@ public class Menu {
     }
 
     public boolean renderExistingCustomerMenu() {
-        output("[1]");
+        output("ENTER ID:");
+        userInput.prompt();
+
+
         return false;
     }
 
@@ -77,7 +80,10 @@ public class Menu {
         String firstName = userInput.promptString();
         output("Enter LAST NAME: ");
         String lastName = userInput.promptString();
-
+        output("Enter PIN");
+        String pin = userInput.promptString();
+        Customer newCustomer = engine.createNewCustomer(firstName, lastName, pin);
+        //renderAccountsMenu(newCustomer);
         return false;
     }
 }

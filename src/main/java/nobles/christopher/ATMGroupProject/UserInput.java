@@ -1,4 +1,5 @@
 package nobles.christopher.ATMGroupProject;
+
 import java.util.Scanner;
 
 /**
@@ -8,22 +9,23 @@ public class UserInput {
     Scanner userInput = new Scanner(System.in);
 
 
-    public int prompt(){
+    public int prompt() {
         int a = userInput.nextInt();
         return a;
     }
 
-    public double promptDouble(){
+    public double promptDouble() {
         double a = userInput.nextDouble();
-        return a;}
+        return a;
+    }
 
-    public String promptString(){
+    public String promptString() {
         String a = userInput.next();
-        return a;}
+        return a;
+    }
 
     public int getFuckingResponse() {
-       int a = userInput.nextInt();
-
+        int a = userInput.nextInt();
         return a;
     }
 }

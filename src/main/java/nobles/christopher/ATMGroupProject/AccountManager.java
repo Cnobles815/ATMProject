@@ -9,37 +9,34 @@ public class AccountManager {
 
     private ArrayList<Account> accounts = new ArrayList<Account>();
     private int accountIDCounter = 0;
-    enum AccountStatus{OPEN,CLOSED,OFAC}
-    public enum AccountType{CHECKING,SAVING,INVESTMENT}
 
-//    private Account getAccountByID(int userID) {
-//
-//        return;
-//    }
-
-    public Account createAccount(Customer customer, AccountType type){
+    public Account createAccount(Customer customer, AccountType type) {
         Account account = new Account(accountIDCounter, customer, type);
         accounts.add(account);
         accountIDCounter++;
         return account;
 
 
-
     }
 
-    public boolean closeAccount(){
+    public boolean closeAccount() {
 
         return true;
     }
 
-    public String balanceInquiry(Account account){
+//    private Account getAccountByID(int userID) {
+//
+//        return;
+//    }
+
+    public String balanceInquiry(Account account) {
 
         String balance = String.valueOf(account.getAccountBalance());
 
         return balance;
     }
 
-    public double deposit(Account account , Double depositAmount){
+    public double deposit(Account account, Double depositAmount) {
 
         double balance = account.getAccountBalance();
 
@@ -48,7 +45,7 @@ public class AccountManager {
         return answer;
     }
 
-    public double withdrawal(Account account, Double withdrawalAmount){
+    public double withdrawal(Account account, Double withdrawalAmount) {
 
         double balance = account.getAccountBalance();
 
@@ -58,15 +55,20 @@ public class AccountManager {
         return answer;
     }
 
-    public boolean transfer (Account destination, Double transferAmount){
-
+    public boolean transfer(Account sendingAccount, Account recievingAccount, Double transferAmount) {
+        withdrawal(sendingAccount, transferAmount);
+        deposit(recievingAccount, transferAmount);
 
         return false;
     }
 
-    public boolean getAccountByID (int accountID){
+    public void getAccountByID(int accountID) {
 
     }
+
+    enum AccountStatus {OPEN, CLOSED, OFAC}
+
+    public enum AccountType {CHECKING, SAVING, INVESTMENT}
 
 
 }

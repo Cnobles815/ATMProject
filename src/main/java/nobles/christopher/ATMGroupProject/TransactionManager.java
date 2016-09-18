@@ -10,18 +10,18 @@ public class TransactionManager {
     private ArrayList<Transaction> transactionArrayList = new ArrayList<Transaction>();
 
     private int transctionIDCounter;
-    Transaction {DEBIT, CREDIT, TRANSFER};
+    //Transaction {DEBIT, CREDIT, TRANSFER};
 
-    public Transaction getTransactionByID(int transID){
+//    public Transaction getTransactionByID(int transID) {
+//
+//    }
 
-    }
-
-    public boolean logTransaction(){
+    public boolean logTransaction() {
 
         return false;
     }
 
-    public void outputTransactionLog(Account account){
+    public void outputTransactionLog(Account account) {
 
 
     }
